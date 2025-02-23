@@ -398,7 +398,7 @@
 
 <td>
 
-> NOTE: Linux Requires: [Mainline kernel](https://github.com/sm8450-mainline/linux), Only [PostmarketOS](https://github.com/sm8450-mainline/pmaports) has been tested!
+> NOTE: Linux Requires: [Mainline kernel](https://github.com/sm8450-mainline/linux), Only [PostmarketOS](https://github.com/index986/pmaports/tree/wip) has been tested!
 
 | Feature              | Description   | State |
 |:---------------------|:--------------|:-----:|
@@ -411,15 +411,16 @@
 | Gyroscope Sensor     |               | ❌    |
 | Fingerprint Sensor   |               | ❌    |
 | NFC Sensor           |               | ✅    |
-| Temperature Sensor   |               | ❔    |
-| Battery              |Doesn't work in some DE| ⚠️    |
+| Temperature Sensor   |               | ✅    |
+| Battery              |               | ✅    |
 | USB Host Mode        |               | ❔    |
 | USB Device Mode      |               | ✅    |
-| USB Power Delivery   |               | ❌    |
-| Charging             |    Untested   | ❔    |
+| USB Power Delivery   |               | ✅    |
+| Charging             |               | ✅    |
 | WLAN                 |               | ❌    |
 | CPU                  |               | ✅    |
 | Touchscreen          |               | ✅    |
+| Flashlight           |               | ✅    |
 | Bluetooth            |               | ❌    |
 | GPS                  |               | ❌    |
 | Speakers             |               | ❌    |
@@ -3013,6 +3014,38 @@
 
   </summary>
 </details>
+
+<details>
+<summary><b><strong>Samsung Devices</strong></b></summary>
+
+## Samsung Galaxy Tab A7 LTE (T507)
+
+<img align="right" src="Resources/Pictures/Samsung-Galaxy-Tab-A7-LTE.png" width="500" alt="Preview">
+
+**State: Active** <br>
+**Codename: gta4l** <br>
+**Maintainer: [V6lhost](https://github.com/V6lhost/)** <br>
+**Contributors: [V6lhost](https://github.com/V6lhost/)** <br>
+**Tester: [V6lhost](https://github.com/V6lhost/)**
+
+### UEFI Status
+
+| Feature            | Description              | State |
+|:-------------------|:-------------------------|:-----:|
+| Display            |                          | ✅    |
+| Internal Storage   |                          | ✅    |
+| Side Buttons       | Only Volume Buttons      | ⚠️    |
+| USB Host Mode      |                          | ✅    |
+| USB Device Mode    |                          | ❌    |
+| USB Power Delivery |                          | ✅    |
+| Mass Storage       | Reboots                  | ❌    |
+| SD Card            |                          | ❌    |
+| Windows Boot       |                          | ❔    |
+| Linux Boot         |                          | ❌    |
+
+  </summary>
+</details>
+
 
 <details>
 <summary><b><strong>Xiaomi Devices</strong></b></summary>
