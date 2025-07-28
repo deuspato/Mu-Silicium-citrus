@@ -1,4 +1,3 @@
-#include <Library/AcpiPlatformUpdateLib.h>
 #include <Library/AslUpdateLib.h>
 #include <Library/MemoryMapHelperLib.h>
 #include <Library/UefiBootServicesTableLib.h>
@@ -14,6 +13,7 @@ PlatformUpdateAcpiTables ()
   EFI_STATUS                          Status;
   ARM_MEMORY_REGION_DESCRIPTOR_EX     MPSSEFSRegion;
   ARM_MEMORY_REGION_DESCRIPTOR_EX     ADSPEFSRegion;
+  ARM_MEMORY_REGION_DESCRIPTOR_EX     TGCMRegion;
   EFI_CHIPINFO_PROTOCOL              *mChipInfoProtocol;
   EFI_PLATFORMINFO_PROTOCOL          *mPlatformInfoProtocol;
   EFI_SMEM_PROTOCOL                  *mSmemProtocol;
@@ -94,6 +94,14 @@ PlatformUpdateAcpiTables ()
     RFMS = (UINT32)ADSPEFSRegion.Length / 2;
     RFAB = (UINT32)ADSPEFSRegion.Address;
     RFAS = (UINT32)ADSPEFSRegion.Length / 2;
+  }
+
+  if (!EFI_ERROR (LocateMemoryMapAreaByName ("TGCM", &TGCMRegion))) {
+    TCMA = (UINT32)TGCMRegion.Address;
+    TCML = (UINT32)TGCMRegion.Length;
+  } else {
+    TCMA = 0xDEADBEEF;
+    TCML = 0xBEEFDEAD;
   }
 
   UpdateNameAslCode (SIGNATURE_32('S', 'O', 'I', 'D'), &SOID, 4);

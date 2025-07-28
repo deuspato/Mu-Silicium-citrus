@@ -26,13 +26,14 @@
   USE_CUSTOM_DISPLAY_DRIVER      = 1
   HAS_BUILD_IN_KEYBOARD          = 0
 
-[BuildOptions]
-  *_*_*_CC_FLAGS = -DHAS_BUILD_IN_KEYBOARD=$(HAS_BUILD_IN_KEYBOARD)
+  #
+  # 0 = SM8550-AB
+  # 1 = SM8550-AC
+  #
+  SOC_TYPE                       = 0
 
-[LibraryClasses]
-  DeviceMemoryMapLib|astonPkg/Library/DeviceMemoryMapLib/DeviceMemoryMapLib.inf
-  DeviceConfigurationMapLib|astonPkg/Library/DeviceConfigurationMapLib/DeviceConfigurationMapLib.inf
-  DevicePrePiLib|astonPkg/Library/DevicePrePiLib/DevicePrePiLib.inf
+[BuildOptions]
+  *_*_*_CC_FLAGS = -DSOC_TYPE=$(SOC_TYPE) -DHAS_BUILD_IN_KEYBOARD=$(HAS_BUILD_IN_KEYBOARD)
 
 [PcdsFixedAtBuild]
   # DDR Start Address
@@ -64,10 +65,10 @@
 !error "Invalid Model Type! 0 or 1 are Valid Model Types."
 !endif
 
-  # Simple FrameBuffer
-  gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1264
-  gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2780
-  gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferColorDepth|32
+  # Simple Frame Buffer
+  gSiliciumPkgTokenSpaceGuid.PcdPrimaryFrameBufferWidth|1264
+  gSiliciumPkgTokenSpaceGuid.PcdPrimaryFrameBufferHeight|2780
+  gSiliciumPkgTokenSpaceGuid.PcdPrimaryFrameBufferColorDepth|32
 
   # Platform Pei
   gQcomPkgTokenSpaceGuid.PcdPlatformType|"LA"
@@ -92,5 +93,10 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|146
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|158
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|146
+
+[LibraryClasses]
+  DeviceMemoryMapLib|astonPkg/Library/DeviceMemoryMapLib/DeviceMemoryMapLib.inf
+  DeviceConfigurationMapLib|astonPkg/Library/DeviceConfigurationMapLib/DeviceConfigurationMapLib.inf
+  AcpiDeviceUpdateLib|SiliciumPkg/Library/AcpiDeviceUpdateLibNull/AcpiDeviceUpdateLibNull.inf
 
 !include SM8550Pkg/SM8550Pkg.dsc.inc

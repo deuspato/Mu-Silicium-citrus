@@ -50,7 +50,7 @@
   INF Binaries/lime/QcomPkg/Drivers/VcsDxe/VcsDxe.inf
   INF Binaries/lime/QcomPkg/Drivers/ClockDxe/ClockDxe.inf
 
-  INF QcomPkg/Drivers/ClockSpeedUpDxe/ClockSpeedUpDxe.inf
+  INF QcomPkg/Drivers/CpuClockHandlerDxe/CpuClockHandlerDxe.inf
 
   INF Binaries/lime/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
   INF Binaries/lime/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
@@ -77,10 +77,10 @@
   INF Binaries/lime/QcomPkg/Drivers/AdcDxe/AdcDxe.inf
   INF Binaries/lime/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
   INF Binaries/lime/QcomPkg/Drivers/DDRInfoDxe/DDRInfoDxe.inf
-  INF Binaries/lime/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
 
-  INF Binaries/generic/QcomPkg/Drivers/XhciPciEmulationDxe/XhciPciEmulationDxe.inf
-  INF Binaries/generic/QcomPkg/Drivers/XhciDxe/XhciDxe.inf
+  INF QcomPkg/Drivers/DdrClockHandlerDxe/DdrClockHandlerDxe.inf
+
+  INF Binaries/lime/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
 
   INF MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
   INF MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf
@@ -93,9 +93,9 @@
   INF Binaries/lime/QcomPkg/Drivers/HashDxe/HashDxe.inf
   INF Binaries/lime/QcomPkg/Drivers/CipherDxe/CipherDxe.inf
   INF Binaries/lime/QcomPkg/Drivers/MacDxe/MacDxe.inf
-  INF Binaries/lime/QcomPkg/Drivers/RNGDxe/RngDxe.inf
+  INF Binaries/lime/QcomPkg/SocPkg/KamortaPkg/Drivers/RNGDxe/RngDxe.inf
 
   INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
 
-  #INF Binaries/lime/QcomPkg/Drivers/PILDxe/PILDxe.inf
+  INF Binaries/lime/QcomPkg/Drivers/PILDxe/PILDxe.inf
   INF Binaries/lime/QcomPkg/Drivers/ShmBridgeDxe/ShmBridgeDxeLA.inf

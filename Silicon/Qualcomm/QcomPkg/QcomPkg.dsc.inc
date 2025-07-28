@@ -24,8 +24,8 @@
   RamPartitionTableLib|QcomPkg/Library/RamPartitionTableLib/RamPartitionTableLib.inf
   ConfigurationMapHelperLib|QcomPkg/Library/ConfigurationMapHelperLib/ConfigurationMapHelperLib.inf
 
-  # Pei Library
-  PlatformPeiLib|QcomPkg/Library/PlatformPeiLib/PlatformPeiLib.inf
+  # HOB Library
+  PlatformHobLib|QcomPkg/Library/PlatformHobLib/PlatformHobLib.inf
 
   # Memory Protection Library
   MemoryProtectionLib|QcomPkg/Library/MemoryProtectionLib/MemoryProtectionLib.inf
@@ -35,8 +35,9 @@
   QcomPkg/Drivers/SmBiosTableDxe/SmBiosTableDxe.inf
 
   # Custom Snapdragon Drivers
-  QcomPkg/Drivers/ClockSpeedUpDxe/ClockSpeedUpDxe.inf
   QcomPkg/Drivers/DynamicRamDxe/DynamicRamDxe.inf
+  QcomPkg/Drivers/CpuClockHandlerDxe/CpuClockHandlerDxe.inf
+  QcomPkg/Drivers/DdrClockHandlerDxe/DdrClockHandlerDxe.inf
   QcomPkg/Drivers/DisplayReEnablerDxe/DisplayReEnablerDxe.inf
   QcomPkg/Drivers/PeripheralInitDxe/PeripheralInitDxe.inf
 

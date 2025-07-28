@@ -44,23 +44,30 @@
 
   # SmBios
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Snapdragon (TM) 8 Gen 2"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosProcessorCodename|"SM8550"
+!if $(SOC_TYPE) == 0
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosProcessorCodename|"SM8550-AB"
+!elseif $(SOC_TYPE) == 1
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosProcessorCodename|"SM8550-AC"
+!endif
 
   # CPU
-  gQcomPkgTokenSpaceGuid.PcdMaxCpuFreq|3200
   gArmPlatformTokenSpaceGuid.PcdCoreCount|8
   gArmPlatformTokenSpaceGuid.PcdClusterCount|3
+!if $(SOC_TYPE) == 0
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosMaxCpuFreq|3190
+!elseif $(SOC_TYPE) == 1
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosMaxCpuFreq|3360
+!endif
 
   # CPU Cache
-  gQcomPkgTokenSpaceGuid.PcdHasLevel2Cache|TRUE
-  gQcomPkgTokenSpaceGuid.PcdHasLevel3Cache|FALSE        # Is actually has it.
-  gQcomPkgTokenSpaceGuid.PcdLevel1InstCacheSize|0x20
-  gQcomPkgTokenSpaceGuid.PcdLevel1DataCacheSize|0x20
-  gQcomPkgTokenSpaceGuid.PcdLevel2CacheSize|0x400
-  gQcomPkgTokenSpaceGuid.PcdLevel3CacheSize|0           # Unknown.
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosLevel1InstCacheSize|0x20
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosLevel1DataCacheSize|0x20
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosLevel2CacheSize|0x400
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosLevel3CacheSize|0x2000         # Unoffical Value
 
-  # Memory Speed
-  gQcomPkgTokenSpaceGuid.PcdMemorySpeed|4200
+  # Memory Speed & Type
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosMemorySpeed|4200
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosMemoryType|35
 
   # Platform Pei HOBs
   gQcomPkgTokenSpaceGuid.PcdEnableInfoBlkHob|TRUE
